@@ -9,8 +9,10 @@ import tensorflow_probability as tfp
 tfd = tfp.distributions
 
 st.title('Using Tensorflow Probability for MLE')
-st.subheader('First, we compute the mean and sigma using analytical MLE.')
-st.subheader('Second, we compute the mean and sigma using TF Probability by optimization and gradients.')
+st.subheader('To Compute, Press Button on the SideBar:')
+st.write('First, we compute the mean and sigma using analytical MLE.  Second, we compute the mean and sigma using TF Probability by optimization and gradients.')
+
+st.sidebar.write('Enter a stock ticker.  Enter start and end dates.')
 
 ticker = st.sidebar.text_input('Input Stock Ticker', value='IBM', max_chars=None, key=None, type='default')
 st.header(ticker)
@@ -60,7 +62,7 @@ def mle_fit(x):
     st.plotly_chart(plot)
 
     return t.loc, t.scale
-    
+        
 if(st.sidebar.button("Press Button to Compute MLE")):
     mu, sigma = mle(r)
     mu_fit, sigma_fit = mle_fit(r)
