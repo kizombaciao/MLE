@@ -1,5 +1,3 @@
-# https://towardsdatascience.com/downloading-historical-stock-prices-in-python-93f85f059c1f
-
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -74,10 +72,3 @@ if(st.sidebar.button("Press Button to Compute MLE")):
     st.sidebar.info(f'{sigma.numpy():.5f}')
     st.sidebar.info(f'{sigma_fit.numpy():.5f}')
     
-
-
-
-
-    
-
-
